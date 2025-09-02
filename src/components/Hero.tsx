@@ -1,8 +1,20 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, Linkedin } from "lucide-react";
+import { ArrowRight, Mail, Linkedin, Download } from "lucide-react";
 import heroImage from "@/assets/hero-bg-green.jpg";
+import { downloadPageAsPDF } from "@/utils/pdfDownload";
+import { toast } from "sonner";
 
 const Hero = () => {
+  const handleDownloadPDF = async () => {
+    toast.loading("Generating PDF...");
+    const success = await downloadPageAsPDF("denrish-group-website");
+    
+    if (success) {
+      toast.success("PDF downloaded successfully!");
+    } else {
+      toast.error("Failed to generate PDF. Please try again.");
+    }
+  };
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -51,6 +63,16 @@ const Hero = () => {
           >
             <Linkedin className="mr-2 h-5 w-5" />
             Connect on LinkedIn
+          </Button>
+
+          <Button 
+            onClick={handleDownloadPDF}
+            variant="outline" 
+            size="lg"
+            className="border-white/30 text-white hover:bg-white/10 transition-all duration-300"
+          >
+            <Download className="mr-2 h-5 w-5" />
+            Download PDF
           </Button>
         </div>
       </div>

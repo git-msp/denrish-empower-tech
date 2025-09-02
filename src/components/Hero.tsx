@@ -14,17 +14,20 @@ const Hero = () => {
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-hero" />
       
+      {/* Additional dark overlay for better text contrast */}
+      <div className="absolute inset-0 bg-black/30" />
+      
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <h1 className="text-5xl md:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6">
           Denrish Group
         </h1>
         
-        <p className="text-xl md:text-2xl text-secondary-foreground mb-4 font-medium">
+        <p className="text-xl md:text-2xl text-white/90 mb-4 font-medium">
           AI-Powered Solutions for Modern Business
         </p>
         
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
+        <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed">
           Free AWS cost optimization, security scans, and innovative AI solutions including physiotherapy robots for disabled children
         </p>
         

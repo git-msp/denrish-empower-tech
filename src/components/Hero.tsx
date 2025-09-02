@@ -19,7 +19,7 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-6">
+        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
           Denrish Group
         </h1>
         
